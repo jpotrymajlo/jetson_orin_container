@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=nvcr.io/nvidia/l4t-base:r32.7.1
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-jetpack:r36.4.0
 
 FROM ${BASE_IMAGE}
 ARG DEBIAN_FRONTEND=noninteractive
