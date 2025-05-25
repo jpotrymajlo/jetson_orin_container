@@ -1,0 +1,14 @@
+services:
+  dev_container:
+    build: .
+    entrypoint: [bash, "/tmp/install/entrypoint.sh"]
+    volumes:
+      #- ${HOME}:${HOME}:rw
+    - ${HOME}/jetson_projects:/projects:rw
+    - ${PWD}/init_scripts/:/tmp/install:ro
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    environment:
+    - DISPLAY=${DISPLAY}
+    - DOCKER_HOME=${HOME}
+    - DOCKER_USER=${USER}
+
