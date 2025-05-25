@@ -1,6 +1,6 @@
 
 
-set -e -x
+#set -e -x
 
 echo "start container"
 echo $DOCKER_HOME 

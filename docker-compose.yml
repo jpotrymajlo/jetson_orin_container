@@ -4,7 +4,7 @@ services:
     entrypoint: [bash, "/tmp/install/entrypoint.sh"]
     volumes:
       #- ${HOME}:${HOME}:rw
-    - ${HOME}/jetson_projects:/projects:rw
+    - ${HOME}/projects:/projects:rw
     - ${PWD}/init_scripts/:/tmp/install:ro
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
     environment:
