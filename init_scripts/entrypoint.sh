@@ -3,13 +3,9 @@
 #set -e -x
 
 echo "start container"
-echo $DOCKER_HOME 
-echo $DOCKER_USER
 
 docker_uid=$(stat -c '%u' "/projects")
-echo $docker_uid
 docker_gid=$(stat -c '%g' "/projects")
-echo $docker_gid
 
 groupadd --gid "${docker_gid}" devs
 useradd --uid "${docker_uid}" --gid "${docker_gid}" --groups sudo -m -d "${DOCKER_HOME}" "${DOCKER_USER}"
