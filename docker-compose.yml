@@ -3,12 +3,14 @@ services:
     build: .
     entrypoint: [bash, "/tmp/install/entrypoint.sh"]
     volumes:
-      #- ${HOME}:${HOME}:rw
-    - ${HOME}/projects:/projects:rw
-    - ${PWD}/init_scripts/:/tmp/install:ro
-    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+        #- ${HOME}:${HOME}:rw
+        - ${HOME}/projects:/projects:rw
+        - ${PWD}/init_scripts/:/tmp/install:ro
+        - /tmp/.X11-unix:/tmp/.X11-unix:rw
     environment:
-    - DISPLAY=${DISPLAY}
-    - DOCKER_HOME=${HOME}
-    - DOCKER_USER=${USER}
+        - DISPLAY=${DISPLAY}
+        - DOCKER_HOME=${HOME}
+        - DOCKER_USER=${USER}
+    ports:
+        - 22222:22
 

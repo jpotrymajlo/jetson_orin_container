@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker compose run -it --rm dev_container
+docker compose run -it --build --service-ports --rm dev_container
 

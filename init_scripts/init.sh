@@ -13,6 +13,7 @@ apt-get update && \
     build-essential \
     curl \
     wget \
+    ssh \
     && rm -rf /var/lib/apt/lists/*
 
 
