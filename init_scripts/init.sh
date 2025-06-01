@@ -9,7 +9,6 @@ apt-get update && \
     sudo \
     vim \
     vim-addon-manager \
-    vim-youcompleteme \
     build-essential \
     curl \
     wget \

@@ -7,5 +7,4 @@ COPY init_scripts/init.sh /tmp/init.sh
 
 RUN chmod a+rx /tmp/init.sh && /tmp/init.sh
 
-EXPOSE 22
 
