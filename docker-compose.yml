@@ -15,6 +15,7 @@ services:
         - ${HOME}/.ssh:${DOCKER_HOME}/.ssh:rw
         - ${HOME}/.local_docker:${DOCKER_HOME}/.local:rw
         - ${HOME}/.vscode-server-docker:${DOCKER_HOME}/.vscode-server:rw
+        - ${HOME}/.conan2-docker:${DOCKER_HOME}/.conan2:rw
         - ${PWD}/init_scripts/:/tmp/install:ro
         - /tmp/.X11-unix:/tmp/.X11-unix:rw
     environment:

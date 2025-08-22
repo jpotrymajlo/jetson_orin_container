@@ -13,6 +13,7 @@ apt-get update && \
     wget \
     ssh \
     python3-pip \
+    libdbus-1-dev \
     && rm -rf /var/lib/apt/lists/*
 
 wget https://github.com/Kitware/CMake/releases/download/v4.0.2/cmake-4.0.2-linux-aarch64.sh \
