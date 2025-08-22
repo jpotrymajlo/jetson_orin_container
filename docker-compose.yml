@@ -1,9 +1,20 @@
 services:
   dev_container:
-    build: .
+    build:
+      context: .
+      args:
+        DOCKER_USER: ${DOCKER_USER}
+        DOCKER_HOME: ${DOCKER_HOME}
+        DOCKER_UID: ${DOCKER_UID}
+        DOCKER_GID: ${DOCKER_GID}
+        DISPLAY: ${DISPLAY}
+
     entrypoint: [bash, "/tmp/install/entrypoint.sh"]
     volumes:
-        - ${HOME}:${HOME}:rw
+        - ${HOME}/projects:${DOCKER_HOME}/projects:rw
+        - ${HOME}/.ssh:${DOCKER_HOME}/.ssh:rw
+        - ${HOME}/.local_docker:${DOCKER_HOME}/.local:rw
+        - ${HOME}/.vscode-server-docker:${DOCKER_HOME}/.vscode-server:rw
         - ${PWD}/init_scripts/:/tmp/install:ro
         - /tmp/.X11-unix:/tmp/.X11-unix:rw
     environment:
