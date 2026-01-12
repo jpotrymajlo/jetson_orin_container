@@ -6,7 +6,12 @@ export DOCKER_HOME=$HOME
 export DOCKER_USER=$USER
 export DISPLAY=${DISPLAY}
 
-docker compose run -it --build --service-ports --rm dev_container
+if command -v nvidia-smi &> /dev/null; then
+    docker compose run -it --build --service-ports --rm gpu_dev_container
+else
+    docker compose run -it --build --service-ports --rm dev_container
+fi
+
 
 
 

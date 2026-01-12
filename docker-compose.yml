@@ -1,3 +1,4 @@
+
 services:
   dev_container:
     build:
@@ -8,7 +9,6 @@ services:
         DOCKER_UID: ${DOCKER_UID}
         DOCKER_GID: ${DOCKER_GID}
         DISPLAY: ${DISPLAY}
-
     entrypoint: [bash, "/tmp/install/entrypoint.sh"]
     volumes:
         - ${HOME}/projects:${DOCKER_HOME}/projects:rw
@@ -24,4 +24,17 @@ services:
         - DOCKER_USER=${USER}
     ports:
         - 22222:22
+
+  gpu_dev_container:
+    extends:
+      service: dev_container
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
 

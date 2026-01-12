@@ -1,4 +1,6 @@
-ARG BASE_IMAGE=nvcr.io/nvidia/l4t-jetpack:r36.4.0
+#ARG BASE_IMAGE=nvcr.io/nvidia/l4t-jetpack:r36.4.0
+ARG BASE_IMAGE=nvcr.io/nvidia/cuda-dl-base:24.10-cuda12.6-devel-ubuntu22.04
+
 
 FROM ${BASE_IMAGE}
 ARG DEBIAN_FRONTEND=noninteractive
